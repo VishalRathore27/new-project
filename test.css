@@ -1,0 +1,119 @@
+body {
+  transition: opacity 1s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+* {
+  box-sizing: border-box;
+  touch-action: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(bg.jpeg);
+  background-size: 1000px;
+  background-position: center center;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("bg.jpeg") center / cover no-repeat;
+  overflow: hidden;
+}
+
+
+.paper {
+  position: absolute;
+  border: 2px solid rgb(0, 0, 0);
+  background-image: url(paper.webp);
+  background-size: cover;
+  background-position: center;
+  padding: 20px 60px;
+  transform: rotate(-5deg);
+  box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
+  cursor: grab;
+  background-color: black;
+}
+
+.paper.heart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.paper.heart::after {
+  content: "";
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.paper:active {
+  cursor: grabbing;
+}
+
+.paper p {
+  font-size: clamp(16px, 3vw, 22px);
+  font-family: 'Comic Sans MS', cursive;
+  /* color: rgb(0, 0, 0); */
+  margin: 0;
+}
+
+.paper.ji {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+.next-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 1px solid black;
+  background: rgba(255,255,255,0.8);
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 9999;
+}
+.next-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.paper img {
+  width: 180px;
+  max-width: 100%;
+  display: block;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+p {
+  /* font-family: 'Zeyada'; */
+  font-size: 50px;
+  color: rgb(0,0,100);
+  opacity: 0.75;
+  user-select: none;
+  
+  /* filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9)); */
+}
