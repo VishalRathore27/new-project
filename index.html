@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I’m Sorry</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video" id="bgVideo">
+    <source src="video3.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    const video = document.getElementById('bgVideo');
+    video.playbackRate = 0.6;
+  </script>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Content -->
+  <div class="content">
+  <h1 id="title"></h1>
+  <p id="message"></p>
+  <a href="main.html" class="btn" id="continueBtn">Please Continue</a>
+</div>
+
+<script>
+const titleText = "I Never Meant to Hurt You Sahibaa";
+const messageText =
+`If I could go back in time,
+I would choose my words more carefully…
+and love you better,
+Sorry mene abhi tak aapko bohot hurt kiya Sahibaa.`;
+
+const titleEl = document.getElementById("title");
+const messageEl = document.getElementById("message");
+const btn = document.getElementById("continueBtn");
+
+let tIndex = 0;
+let mIndex = 0;
+
+// Type title
+function typeTitle() {
+  if (tIndex < titleText.length) {
+    titleEl.textContent += titleText[tIndex];
+    tIndex++;
+    setTimeout(typeTitle, 80);
+  } else {
+    setTimeout(typeMessage, 400);
+  }
+}
+
+// Type message
+function typeMessage() {
+  if (mIndex < messageText.length) {
+    messageEl.textContent += messageText[mIndex];
+    mIndex++;
+    setTimeout(typeMessage, 35);
+  } else {
+    setTimeout(showButton, 600);
+  }
+}
+
+function showButton() {
+  btn.style.opacity = "1";
+  btn.style.pointerEvents = "auto";
+}
+
+// start animation
+//typeTitle();
+titleEl.textContent = titleText;
+setTimeout(typeMessage, 800);
+
+</script>
+
+
+</body>
+</html>
