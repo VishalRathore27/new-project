@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  transition: background 1s ease;
+}
+
+/* Canvas */
+canvas {
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+/* Music Button */
+#musicBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Choice Box */
+.choice {
+  position: fixed;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 20;
+  opacity: 1;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.choice.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.choice p {
+  font-size: 20px;
+  color: #ff004c;
+  background: rgba(255,255,255,0.85);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.choice button {
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: rgba(255, 80, 120, 0.9);
+  color: white;
+}
+
+#noBtn {
+  background: rgba(0,0,0,0.7);
+  color: white;
+}
